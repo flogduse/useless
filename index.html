@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0a0a0a">
+<title>UselessOS™</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%238cff00'/%3E%3Ctext x='16' y='23' font-size='20' font-weight='900' text-anchor='middle' fill='%23080808' font-family='Arial'%3EU%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ BOOT SCREEN ============ -->
+<div id="boot">
+  <div class="boot-logo">U<span>OS</span></div>
+  <div class="boot-title">USELESS<span>OS</span></div>
+  <div class="boot-sub">The operating system designed to waste your time.</div>
+  <div class="boot-bar"><i id="bootBar"></i></div>
+  <div class="boot-status" id="bootStatus">Initializing unnecessary services...</div>
+</div>
+
+<!-- ============ DESKTOP ============ -->
+<main id="desktop" class="hidden">
+  <div class="wallpaper">
+    <div class="desktop-brand">USELESS<span>OS</span><small>productivity not found</small></div>
+    <div class="desktop-icons" id="desktopIcons"></div>
+  </div>
+
+  <div id="windows"></div>
+  <div id="toast"></div>
+  <div id="miniToast"></div>
+  <div id="adLayer"></div>
+  <div id="ctxMenu" class="ctx hidden"></div>
+
+  <!-- taskbar -->
+    <div class="taskbar">
+      <button class="start" id="startBtn"><span>U</span> Start</button>
+      <div class="task-apps" id="taskApps"></div>
+      <div class="task-right"><span id="net">● ONLINE</span><span id="battery" title="Battery — it's fine, trust us">🔋</span><span id="clock"></span><button id="powerBtn" title="Power">⏻</button></div>
+    </div>
+
+    <div id="startMenu" class="start-menu hidden">
+      <div class="start-head"><strong>USELESS<span>OS</span></strong><small>v2.8 • definitely stable</small></div>
+      <input id="appSearch" placeholder="Search for an app you don't need...">
+      <div class="start-grid" id="startGrid"></div>
+      <div class="start-foot">Productivity <b>0%</b><span>•</span> Uselessness <b>100%</b><span>•</span> Rage <b id="rageStart">0</b><span>•</span> Time wasted <b id="startTime">00:00</b></div>
+      <button class="site-btn primary showoff-btn" id="showOffBtn">▶ SHOW OFF</button>
+    </div>
+</main>
+
+<!-- ============ MODAL / DIALOGS ============ -->
+<div id="modal" class="modal hidden"><div class="modal-card"><div class="modal-title" id="modalTitle"></div><div class="modal-body" id="modalBody"></div><div class="modal-actions" id="modalActions"></div></div></div>
+
+<!-- ============ LOCK SCREEN ============ -->
+<div id="lockScreen" class="full-overlay hidden">
+  <div class="lock-body">🔒<h1>UselessOS is locked.</h1><p>You cannot sign out. You cannot sign in. There is no session.</p>
+  <button class="site-btn primary" id="lockCancel">Cancel (does nothing)</button><button class="btn" id="lockGiveUp">Give up</button></div>
+</div>
+
+<!-- ============ BSOD ============ -->
+<div id="bsod" class="full-overlay hidden">
+  <div class="bsod-body">
+    <div class="bsod-face">:(</div>
+    <h1>USELESS_OS_BSOD</h1>
+    <p>Nothing was protected because there was nothing to protect.</p>
+    <p>Collecting your tears… <b id="bsodPct">0%</b></p>
+    <div class="bsod-bar"><i id="bsodBar"></i></div>
+    <p class="bsod-hint">Click anywhere to continue pretending.</p>
+    <div id="bsodQrWrap"><canvas id="bsodQr" width="96" height="96"></canvas>
+      <small>Scan me. Go on. Read the fine print of your despair.</small></div>
+  </div>
+</div>
+
+<!-- ============ BRIGHTNESS BOOM OVERLAYS ============ -->
+<div id="boomDark" class="boom hidden"></div>
+<div id="boomWhite" class="boom hidden"><div class="boom-boom">💥</div><span>BOOM</span></div>
+
+<!-- ============ LEBRON FLASH (brightness max — blurred overexposed photo meme) ============ -->
+<div id="lebronFlash" class="lebron-flash hidden">
+  <div class="lebron-halo"></div>
+  <div class="lebron-stage">
+<video id="lebronVid" class="lebron-melt" poster="data:image/webp;base64,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" src="assets/lebron-sunshine.mp4" autoplay loop playsinline preload="metadata"></video>
+    </div>
+</div>
+
+<!-- ============ YOU WIN ============ -->
+<div id="youWin" class="youwin hidden">
+  <div class="youwin-card">
+    <h1>YOU WIN 🎉</h1>
+    <p>You clicked a button that ran away from you for years.</p>
+    <p class="youwin-pride">We are so proud of you (we watched every attempt).</p>
+    <div class="confetti">
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+    </div>
+  </div>
+</div>
+
+<script src="js/state.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/apps.js"></script>
+<script src="js/browser.js"></script>
+<script src="js/terminal.js"></script>
+
+<script src="js/main.js"></script>
+</body>
+</html>
