@@ -22,6 +22,8 @@ UselessOS™ — a browser-based fake operating system with draggable windows, a
 
 Live demo: **https://flogduse.github.io/useless/**
 
+Project demo video: **https://drive.google.com/drive/folders/1Ta7UIuw-gwYBPFTtDbYvgS4eUuTgRySO?usp=sharing**
+
 ## Technical Details
 ### Technologies/Components Used
 For Software:
