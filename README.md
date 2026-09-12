@@ -116,7 +116,7 @@ Project documentation: **https://docs.google.com/document/d/1c6t5t0flFQn_8G4KPGq
                     └──────────────┘
 ```
 
-### Project Documentation
+### Project screenshots
 
 ## Feature List
 
