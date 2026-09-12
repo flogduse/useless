@@ -82,9 +82,9 @@ cd useless
 # Run
 Open `index.html` in any modern browser. No server needed — it works from `file://`. Fonts/icons require internet; the media playback is fully local.
 
-# Documentation
+# screenshot
 
-Project documentation: **https://docs.google.com/document/d/1c6t5t0flFQn_8G4KPGqSen6I4aeM6--whIfE5yOZ6Pc/edit?usp=sharing**
+Project screenshots: **https://docs.google.com/document/d/1c6t5t0flFQn_8G4KPGqSen6I4aeM6--whIfE5yOZ6Pc/edit?usp=sharing**
 
 # Diagrams
 
@@ -116,7 +116,7 @@ Project documentation: **https://docs.google.com/document/d/1c6t5t0flFQn_8G4KPGq
                     └──────────────┘
 ```
 
-### Project screenshots
+### Project documentation
 
 ## Feature List
 
