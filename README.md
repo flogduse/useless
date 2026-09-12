@@ -82,22 +82,9 @@ cd useless
 # Run
 Open `index.html` in any modern browser. No server needed — it works from `file://`. Fonts/icons require internet; the media playback is fully local.
 
-# Screenshots
+# Documentation
 
-![Boot Screen](screenshots/boot.png)
-*The boot sequence: 7 steps of unnecessary initialization.*
-
-![Desktop](screenshots/desktop.png)
-*The desktop with 14 useless apps waiting to waste your time.*
-
-![Browser](screenshots/browser.png)
-*UselessBrowser — a fake internet with fake websites and real rickrolls.*
-
-![Terminal](screenshots/terminal.png)
-*UselessTerminal — lots of commands, zero helpful outputs.*
-
-![Activity Monitor](screenshots/activity.png)
-*Activity Monitor — tracking your failures in real-time.*
+Project documentation: **https://docs.google.com/document/d/1c6t5t0flFQn_8G4KPGqSen6I4aeM6--whIfE5yOZ6Pc/edit?usp=sharing**
 
 # Diagrams
 
